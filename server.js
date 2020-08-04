@@ -39,7 +39,9 @@ app.delete("/api/notes/:id",(req, res) => {
     console.log("test")
 })
 
-app.listen(4400, (err, data) => {
+var PORT = process.env.PORT || 3001;
+
+app.listen(PORT, (err, data) => {
     if (err) {
         console.log(err)
     }
