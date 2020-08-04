@@ -54,6 +54,7 @@ const handleNoteSave = function () {
   const newNote = {
     title: $noteTitle.val(),
     text: $noteText.val(),
+
   };
 
   saveNote(newNote).then(() => {
@@ -68,7 +69,7 @@ const handleNoteDelete = function (event) {
   event.stopPropagation();
 
   const note = $(this).parent(".list-group-item").data();
-
+console.log(note)
   if (activeNote.id === note.id) {
     activeNote = {};
   }
@@ -76,6 +77,7 @@ const handleNoteDelete = function (event) {
   deleteNote(note.id).then(() => {
     getAndRenderNotes();
     renderActiveNote();
+    
   });
 };
 
